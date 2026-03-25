@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"math"
 	"math/rand"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -641,7 +642,7 @@ func downloadMedia(client *whatsmeow.Client, messageStore *MessageStore, message
 	}
 
 	// Download the media using whatsmeow client
-	mediaData, err := client.Download(downloader)
+	mediaData, err := client.Download(context.Background(), downloader)
 	if err != nil {
 		return false, "", "", "", fmt.Errorf("failed to download media: %v", err)
 	}
@@ -677,6 +678,17 @@ func extractDirectPathFromURL(url string) string {
 
 // Start a REST API server to expose the WhatsApp client functionality
 func startRESTServer(client *whatsmeow.Client, messageStore *MessageStore, port int) {
+	// Handler for checking connection status
+	http.HandleFunc("/api/status", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		connected := client.IsConnected()
+		loggedIn := client.Store.ID != nil
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"connected": connected,
+			"logged_in": loggedIn,
+		})
+	})
+
 	// Handler for sending messages
 	http.HandleFunc("/api/send", func(w http.ResponseWriter, r *http.Request) {
 		// Only allow POST requests
@@ -780,7 +792,19 @@ func startRESTServer(client *whatsmeow.Client, messageStore *MessageStore, port 
 
 	// Run server in a goroutine so it doesn't block
 	go func() {
-		if err := http.ListenAndServe(serverAddr, nil); err != nil {
+		lc := net.ListenConfig{
+			Control: func(network, address string, c syscall.RawConn) error {
+				return c.Control(func(fd uintptr) {
+					syscall.SetsockoptInt(int(fd), syscall.SOL_SOCKET, syscall.SO_REUSEADDR, 1)
+				})
+			},
+		}
+		listener, err := lc.Listen(context.Background(), "tcp", serverAddr)
+		if err != nil {
+			fmt.Printf("REST API server error: %v\n", err)
+			return
+		}
+		if err := http.Serve(listener, nil); err != nil {
 			fmt.Printf("REST API server error: %v\n", err)
 		}
 	}()
@@ -800,14 +824,14 @@ func main() {
 		return
 	}
 
-	container, err := sqlstore.New("sqlite3", "file:store/whatsapp.db?_foreign_keys=on", dbLog)
+	container, err := sqlstore.New(context.Background(), "sqlite3", "file:store/whatsapp.db?_foreign_keys=on", dbLog)
 	if err != nil {
 		logger.Errorf("Failed to connect to database: %v", err)
 		return
 	}
 
 	// Get device store - This contains session information
-	deviceStore, err := container.GetFirstDevice()
+	deviceStore, err := container.GetFirstDevice(context.Background())
 	if err != nil {
 		if err == sql.ErrNoRows {
 			// No device exists, create one
@@ -847,6 +871,39 @@ func main() {
 
 		case *events.Connected:
 			logger.Infof("Connected to WhatsApp")
+
+		case *events.Disconnected:
+			logger.Warnf("Disconnected from WhatsApp (auto-reconnect will handle this)")
+
+		case *events.StreamError:
+			logger.Errorf("WhatsApp stream error: %s — reconnecting in 5s", v.Code)
+			go func() {
+				time.Sleep(5 * time.Second)
+				logger.Infof("Attempting reconnect after stream error...")
+				if err := client.Connect(); err != nil {
+					logger.Errorf("Reconnect after stream error failed: %v", err)
+				}
+			}()
+
+		case *events.StreamReplaced:
+			logger.Errorf("WhatsApp stream replaced — reconnecting in 10s")
+			go func() {
+				time.Sleep(10 * time.Second)
+				logger.Infof("Attempting reconnect after stream replacement...")
+				if err := client.Connect(); err != nil {
+					logger.Errorf("Reconnect after stream replacement failed: %v", err)
+				}
+			}()
+
+		case *events.KeepAliveTimeout:
+			logger.Warnf("WhatsApp keepalive timeout (errors: %d, last success: %s)", v.ErrorCount, v.LastSuccess.Format(time.RFC3339))
+			if v.ErrorCount > 3 {
+				logger.Errorf("Too many keepalive failures, forcing disconnect to trigger auto-reconnect")
+				client.Disconnect()
+			}
+
+		case *events.KeepAliveRestored:
+			logger.Infof("WhatsApp keepalive restored")
 
 		case *events.LoggedOut:
 			logger.Warnf("Device logged out, please scan QR code to log in again")
@@ -973,7 +1030,7 @@ func GetChatName(client *whatsmeow.Client, messageStore *MessageStore, jid types
 
 		// If we didn't get a name, try group info
 		if name == "" {
-			groupInfo, err := client.GetGroupInfo(jid)
+			groupInfo, err := client.GetGroupInfo(context.Background(), jid)
 			if err == nil && groupInfo.Name != "" {
 				name = groupInfo.Name
 			} else {
@@ -988,7 +1045,7 @@ func GetChatName(client *whatsmeow.Client, messageStore *MessageStore, jid types
 		logger.Infof("Getting name for contact: %s", chatJID)
 
 		// Just use contact info (full name)
-		contact, err := client.Store.Contacts.GetContact(jid)
+		contact, err := client.Store.Contacts.GetContact(context.Background(), jid)
 		if err == nil && contact.FullName != "" {
 			name = contact.FullName
 		} else if sender != "" {

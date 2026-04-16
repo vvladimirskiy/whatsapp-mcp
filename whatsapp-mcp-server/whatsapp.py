@@ -519,10 +519,13 @@ def search_contacts(query: str) -> List[Contact]:
         for jid, name in rows:
             if jid in seen:
                 continue
-            # Upgrade empty/numeric LID chat names with resolved push_name
+            # Upgrade empty or pure-numeric chat names (typical for LID
+            # chats where the "name" is just another LID) with the resolved
+            # push_name/full_name from whatsmeow_contacts when available.
             resolved_name = name
-            if (not resolved_name or resolved_name == jid.split('@')[0]) and jid in jid_to_resolved_name:
-                resolved_name = jid_to_resolved_name[jid]
+            if jid in jid_to_resolved_name:
+                if not resolved_name or (resolved_name or '').replace('+','').isdigit():
+                    resolved_name = jid_to_resolved_name[jid]
             seen[jid] = resolved_name
 
         # Build phone_number: if the chat is an @lid, reverse-lookup the

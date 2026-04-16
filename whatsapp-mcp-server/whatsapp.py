@@ -446,37 +446,103 @@ def list_chats(
 
 
 def search_contacts(query: str) -> List[Contact]:
-    """Search contacts by name or phone number."""
+    """Search contacts by name or phone number.
+
+    Searches both the local chats table AND whatsmeow's own contacts store,
+    which is the only place push_name/full_name is recorded for @lid (privacy-
+    masked) contacts. Without this the LID chats surface as unlabeled numbers.
+    """
     try:
         conn = sqlite3.connect(MESSAGES_DB_PATH)
         cursor = conn.cursor()
-        
-        # Split query into characters to support partial matching
-        search_pattern = '%' +query + '%'
-        
+
+        search_pattern = '%' + query + '%'
+
+        # Pass 1: chats whose name or jid matches (covers @s.whatsapp.net contacts)
         cursor.execute("""
-            SELECT DISTINCT 
+            SELECT DISTINCT
                 jid,
                 name
             FROM chats
-            WHERE 
+            WHERE
                 (LOWER(name) LIKE LOWER(?) OR LOWER(jid) LIKE LOWER(?))
                 AND jid NOT LIKE '%@g.us'
             ORDER BY name, jid
             LIMIT 50
         """, (search_pattern, search_pattern))
-        
-        contacts = cursor.fetchall()
-        
-        result = []
-        for contact_data in contacts:
-            contact = Contact(
-                phone_number=contact_data[0].split('@')[0],
-                name=contact_data[1],
-                jid=contact_data[0]
+        rows = cursor.fetchall()
+
+        # Pass 2: resolve query → candidate JIDs via whatsmeow_contacts, then
+        # pull the matching chats (covers LID-masked contacts whose chat name
+        # is a numeric LID and won't match the query directly).
+        extra_jids: List[str] = []
+        jid_to_resolved_name: dict = {}
+        try:
+            wconn = sqlite3.connect(f"file:{WHATSMEOW_DB_PATH}?mode=ro", uri=True)
+            wcur = wconn.cursor()
+            wcur.execute("""
+                SELECT their_jid,
+                       COALESCE(NULLIF(full_name,''), NULLIF(push_name,''),
+                                NULLIF(first_name,''), NULLIF(business_name,''))
+                FROM whatsmeow_contacts
+                WHERE LOWER(first_name)    LIKE LOWER(?)
+                   OR LOWER(full_name)     LIKE LOWER(?)
+                   OR LOWER(push_name)     LIKE LOWER(?)
+                   OR LOWER(business_name) LIKE LOWER(?)
+                   OR their_jid LIKE ?
+            """, (search_pattern, search_pattern, search_pattern,
+                  search_pattern, search_pattern))
+            for their_jid, resolved in wcur.fetchall():
+                if their_jid and resolved:
+                    extra_jids.append(their_jid)
+                    jid_to_resolved_name[their_jid] = resolved
+            # Also expand: any phone match → its LID chats
+            digits = ''.join(c for c in query if c.isdigit())
+            if digits:
+                for lid in _lids_for_phone(digits):
+                    extra_jids.append(f"{lid}@lid")
+            wconn.close()
+        except sqlite3.Error:
+            pass
+
+        if extra_jids:
+            placeholders = ",".join("?" * len(extra_jids))
+            cursor.execute(
+                f"SELECT jid, name FROM chats WHERE jid IN ({placeholders}) "
+                f"AND jid NOT LIKE '%@g.us'",
+                tuple(extra_jids),
             )
-            result.append(contact)
-            
+            rows.extend(cursor.fetchall())
+
+        # De-dupe by jid, preferring the first-seen name
+        seen: dict = {}
+        for jid, name in rows:
+            if jid in seen:
+                continue
+            # Upgrade empty/numeric LID chat names with resolved push_name
+            resolved_name = name
+            if (not resolved_name or resolved_name == jid.split('@')[0]) and jid in jid_to_resolved_name:
+                resolved_name = jid_to_resolved_name[jid]
+            seen[jid] = resolved_name
+
+        # Build phone_number: if the chat is an @lid, reverse-lookup the
+        # underlying phone so the caller gets something usable.
+        result = []
+        for jid, name in seen.items():
+            phone = jid.split('@')[0]
+            if jid.endswith('@lid'):
+                try:
+                    wconn = sqlite3.connect(f"file:{WHATSMEOW_DB_PATH}?mode=ro", uri=True)
+                    wcur = wconn.cursor()
+                    wcur.execute("SELECT pn FROM whatsmeow_lid_map WHERE lid = ?", (phone,))
+                    row = wcur.fetchone()
+                    wconn.close()
+                    if row and row[0]:
+                        phone = row[0]
+                except sqlite3.Error:
+                    pass
+            result.append(Contact(phone_number=phone, name=name, jid=jid))
+
         return result
         
     except sqlite3.Error as e:

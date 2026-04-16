@@ -9,7 +9,46 @@ import json
 import audio
 
 MESSAGES_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'whatsapp-bridge', 'store', 'messages.db')
+WHATSMEOW_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'whatsapp-bridge', 'store', 'whatsapp.db')
 WHATSAPP_API_BASE_URL = "http://localhost:8080/api"
+
+
+def _lids_for_phone(phone: str) -> List[str]:
+    """Return all LIDs that whatsmeow has mapped to this phone number.
+
+    WhatsApp's LID privacy feature stores the sender of a message as an opaque
+    LID (e.g. 52196787900427) instead of the user's phone number in the
+    messages.db. The mapping lives in whatsmeow's own store (whatsapp.db,
+    table whatsmeow_lid_map). Without resolving it, filtering messages by
+    phone number silently returns zero rows for any contact that has LID
+    privacy enabled.
+    """
+    if not phone:
+        return []
+    digits = ''.join(c for c in phone if c.isdigit())
+    if not digits:
+        return []
+    try:
+        conn = sqlite3.connect(f"file:{WHATSMEOW_DB_PATH}?mode=ro", uri=True)
+        cur = conn.cursor()
+        cur.execute("SELECT lid FROM whatsmeow_lid_map WHERE pn = ? OR pn LIKE ?",
+                    (digits, f"%{digits}%"))
+        return [row[0] for row in cur.fetchall()]
+    except sqlite3.Error:
+        return []
+    finally:
+        try:
+            conn.close()
+        except Exception:
+            pass
+
+
+def _sender_candidates_for_phone(phone: str) -> List[str]:
+    """Return all sender-id forms to try when filtering by phone: the phone
+    itself plus any LID aliases. Used with `sender IN (...)` filters."""
+    candidates = [phone] if phone else []
+    candidates.extend(_lids_for_phone(phone))
+    return candidates
 
 def _wait_for_connection(max_retries: int = 3, delay: float = 4.0) -> bool:
     """Wait for the WhatsApp bridge to be connected, retrying up to max_retries times."""

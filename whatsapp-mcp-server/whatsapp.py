@@ -217,8 +217,10 @@ def list_messages(
             params.append(before)
 
         if sender_phone_number:
-            where_clauses.append("messages.sender = ?")
-            params.append(sender_phone_number)
+            candidates = _sender_candidates_for_phone(sender_phone_number)
+            placeholders = ",".join("?" * len(candidates))
+            where_clauses.append(f"messages.sender IN ({placeholders})")
+            params.extend(candidates)
             
         if chat_jid:
             where_clauses.append("messages.chat_jid = ?")
@@ -639,8 +641,15 @@ def get_direct_chat_by_contact(sender_phone_number: str) -> Optional[Chat]:
         conn = sqlite3.connect(MESSAGES_DB_PATH)
         cursor = conn.cursor()
         
-        cursor.execute("""
-            SELECT 
+        lid_jids = [f"{lid}@lid" for lid in _lids_for_phone(sender_phone_number)]
+        jid_filters = ["c.jid LIKE ?"]
+        jid_params: List[str] = [f"%{sender_phone_number}%"]
+        for lid_jid in lid_jids:
+            jid_filters.append("c.jid = ?")
+            jid_params.append(lid_jid)
+
+        cursor.execute(f"""
+            SELECT
                 c.jid,
                 c.name,
                 c.last_message_time,
@@ -648,11 +657,12 @@ def get_direct_chat_by_contact(sender_phone_number: str) -> Optional[Chat]:
                 m.sender as last_sender,
                 m.is_from_me as last_is_from_me
             FROM chats c
-            LEFT JOIN messages m ON c.jid = m.chat_jid 
+            LEFT JOIN messages m ON c.jid = m.chat_jid
                 AND c.last_message_time = m.timestamp
-            WHERE c.jid LIKE ? AND c.jid NOT LIKE '%@g.us'
+            WHERE ({' OR '.join(jid_filters)}) AND c.jid NOT LIKE '%@g.us'
+            ORDER BY c.last_message_time DESC
             LIMIT 1
-        """, (f"%{sender_phone_number}%",))
+        """, tuple(jid_params))
         
         chat_data = cursor.fetchone()
         

@@ -232,3 +232,114 @@ Confirmed ?
 [2026-07-09 13:41:24] ← 113095229849716: Still waiting but should be soon how about you? J
 15:24:54.569[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
 [2026-07-09 13:41:39] ← 113095229849716: Just finished memo and will upload soon. Very good!
+15:24:55.111[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 13:41:40] → 22501535027310: 19 people on my flight.
+15:24:55.491[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+[2026-07-09 13:42:39] ← 35790482587671: [video: video_20260709_152455.mp4] 
+15:24:55.506[33m [Client WARN] Error decrypting message 3A0E010F1F611CFDFAAB from 186423105835245@lid in 17736795773-1585266283@g.us: failed to decrypt group message: no sender key state for key ID 1399830099[0m
+15:24:55.979[36m [Client INFO] Using existing chat name for 17736795773-1585266283@g.us: סרטונים מחזקים ומחכמים לכל ישראל באשר הם[0m
+15:24:55.988[36m [Client INFO] Using existing chat name for 237095247462444@lid: 22501535027310[0m
+[2026-07-09 13:47:28] → 22501535027310: Great!  It will be lots of new, exciting and hard work. Lots to learn and figure out. I’ll pull together a brief to get you and Shmuli up on the project. 
+
+You should start learning the Microsoft Azure AI ecosystem. It’s a lot so don’t get overwhelmed. Focus on Foundry and APIM. Also, learn all about building MCP servers. 
+
+Most important and challenging thing with be auth. Need to make sure that we use no API keys anywhere. All authentication should be Entra ID oauth2 capable. We will talk more about it but wanted to get you started.
+15:24:56.747[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+15:24:56.763[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 13:48:09] ← 119783014031518: [video: video_20260709_152456.mp4] 
+15:24:56.775[36m [Client INFO] Using existing chat name for 237095247462444@lid: 22501535027310[0m
+[2026-07-09 13:48:10] ← 237095247462444: sounds good i will start looking into it ASAP
+15:24:56.958[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+15:24:56.972[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+[2026-07-09 13:49:52] ← 245753901535266: I am scheduled to arrive ~3pm
+15:24:56.984[36m [Client INFO] Using existing chat name for 120363416021048561@g.us: LEBEN & Abba/Mommy[0m
+[2026-07-09 13:53:51] ← 252655913979977: Do you care if lunch is pareve?  Ben?
+15:24:57.747[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 13:53:52] ← 113095229849716: That’s it?
+15:24:57.763[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 13:53:55] ← 113095229849716: How can that be
+15:24:58.529[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:01:04] → 22501535027310: No idea
+15:24:58.629[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:01:31] ← 113095229849716: Boarding now
+15:24:58.644[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:02:19] ← 113095229849716: After you read Larry’s PPT and email send me your thoughts. I like way you described it and think you should write that out as it makes a lot of sense
+15:24:59.279[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+15:24:59.296[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 14:05:16] ← 253729521569961: It’s been a few hours since I posted! 😂😜 
+Who wants to be my 100th donor?! 
+
+https://fundraise.chailifeline.org/mw/kbider/
+15:24:59.430[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+15:24:59.439[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+15:24:59.448[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+15:24:59.457[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 14:08:55] ← 210857191579818: [image: image_20260709_152459.jpg] 
+15:24:59.976[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:11:01] → 22501535027310: [image: image_20260709_152459.jpg] 
+15:25:00.284[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+15:25:00.294[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 14:13:19] ← 91611971231907: [image: image_20260709_152500.jpg] 
+15:25:00.304[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:15:39] → 22501535027310: I actually think as a Framework, this is exactly the right way to do it.  It’s clear to me that unless we no longer have TAM to go after on AVD, we should put a disproportionate amount of resources on getting that business.  At the same time, we should be making deliberate bets and investments on emerging motions that will take over once AVD TAM starts being depleted.
+15:25:01.500[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+15:25:01.514[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 14:19:56] ← 144448491131132: [image: image_20260709_152501.jpg] 
+15:25:01.525[36m [Client INFO] Using existing chat name for 120363416021048561@g.us: LEBEN & Abba/Mommy[0m
+[2026-07-09 14:29:29] ← 252655913979977: Shabbos lunch
+15:25:01.535[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:30:38] → 22501535027310: What you and I discussed in the car is this:
+
+* Product investments can be made on a spectrum: from *founder gut* to *market research validated* (with *seller/customer/field signaled* somewhere in between)
+* ⁠Founder Gut type decisions are cheap to make, Market Research Validated ones are expensive.
+* ⁠There are costs to getting the decision wrong: 
+* ⁠1. Opportunity cost of not building something else that is known to be needed
+* ⁠2. GTM org’s investment in taking the product to market
+* ⁠3. Culture impact of not winning when product doesn’t find PMF
+* ⁠In our situation, I suspect (not certain, but suspect) that we don’t have cost #1 because every “good” idea that we all believe is worthwhile is being funded and built.  For example, if we didn’t build any W365/Intune functionality, what would be build instead?  I don’t think anyone knows.  We haven’t said “no” to some other high potential product in favor of W365/Intune and are now regretting doing it.  So my point is that the true cost of “moving fast” and launching products based on “founder gut” validation side of the spectrum is not costing us that much.  On the contrary, it could be saving us time/money by not going through formal market research to validate every possible idea before building it.
+* ⁠If the above is true, the question of where should we be investing on the product side comes in.  We can invest in enhancing AVD functionality, which not only are we already doing, but there is probably not much more we need to invest to win business.  We can also invest in promising new product ideas and concepts, like we’re doing with W365, Intune, etc.
+* ⁠The true cost shifts to GTM.  Taking a product to market and not finding PMF sucks.  GTM team should be finding the shortest path to ARR.  This means favoring PMF-validated products over new ones, as long as the TAM hasn’t been exhausted.
+* ⁠Selling AVD used to be easy.  Microsoft would pull us in, we didn’t have competition, there was no W365 to position against, customers who really needed us had no options.  Win rates were very high.
+* ⁠It became much harder.  AVD isn’t growing as fast, W365 is the hero motion, many customers already have Nerdio, Microsoft isn’t excited about us any longer, this all leads to shrinking win rates.  
+* ⁠I suspect the sales team is expecting an “easy sale” by picking up “low hanging fruit” customers, which was the case with AVD for a while and is no longer the case.  They have the climb the tree much higher.  Therefore, they are looking to product to hand them another magic product that will make selling as easy as AVD used to be.  I’d love to do that and we have been trying, but no luck so far.
+* ⁠So what does that practically mean?  I think Larry’s framework is the right way to look at it.  Define all the motions, score them on a dimension like Win Rate, compare them to each other and decide where to put the bets.  To me it looks like AVD should be getting disproportionate amount of investment on GTM, product should continue building the products that we have customer-validated to be needed and Sales should be experimenting and perfecting selling those products while feeding Product with the intel they need to make them even better.
+
+Do you agree with the above?
+15:25:02.358[36m [Client INFO] Using existing chat name for 17732189357-1625758690@g.us: Winston Worshippers[0m
+15:25:02.375[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:33:42] ← 113095229849716: I agree with everything except the last line I am not clear on. “Product should continue building the products that we have customer-validated…”. How do we know that customer validation has been achieved?
+15:25:02.838[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:34:14] → 22501535027310: CAB, customer discussion, SE/TAM validation
+15:25:03.237[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:34:18] → 22501535027310: The stuff we do now
+15:25:03.617[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:34:24] ← 113095229849716: Ok then I agree
+15:25:03.632[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:34:37] ← 113095229849716: What if I reply to Larry and cc you and you share this with him
+15:25:03.964[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:34:57] ← 113095229849716: I’ll say we discussed and agree
+15:25:04.231[36m [Client INFO] Using existing chat name for 120363315579853961@g.us: 🏆 JBN+[0m
+15:25:04.248[36m [Client INFO] Using existing chat name for 120363315579853961@g.us: 🏆 JBN+[0m
+[2026-07-09 14:38:20] ← 52196787900427: [video: video_20260709_152504.mp4] 
+15:25:04.260[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+15:25:04.269[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+15:25:04.565[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 14:41:49] ← 11351682506897: [video: video_20260709_152504.mp4] 
+15:25:04.855[36m [Client INFO] Using existing chat name for 113095229849716@lid: 113095229849716[0m
+[2026-07-09 14:42:55] → 22501535027310: Sure.
+15:25:05.574[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+15:25:05.584[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+[2026-07-09 14:43:34] ← 35790482587671: [video: video_20260709_152505.mp4] 
+15:25:05.800[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+15:25:05.810[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+[2026-07-09 14:53:34] ← 83227943411886: [image: image_20260709_152505.jpg] 
+15:25:06.027[36m [Client INFO] Using existing chat name for 120363048524303250@g.us: Vacations in Playa Del Carmen[0m
+15:25:06.041[36m [Client INFO] Using existing chat name for 120363048524303250@g.us: Vacations in Playa Del Carmen[0m
+[2026-07-09 14:54:11] ← 83227943411886: [image: image_20260709_152506.jpg] 
+15:25:06.346[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+15:25:06.360[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+[2026-07-09 15:16:27] ← 211256657072342: This is not the Minyan times at Banyan Tree, correct??
+
+What are the times?
+15:25:07.096[33m [Client WARN] Set status notification has unexpected content (<nil>)[0m
+15:25:12.681[33m [Client WARN] Set status notification has unexpected content (<nil>)[0m

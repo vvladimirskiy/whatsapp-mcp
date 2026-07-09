@@ -388,3 +388,12 @@ If you have a child with a special diet in camp, write a simple thank you messag
 [2026-07-09 16:23:00] ← 11351682506897: [video: video_20260709_162301.mp4] 
 16:24:10.090[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 [2026-07-09 16:24:10] ← 35790482587671: [video: video_20260709_162410.mp4] 
+16:41:31.066[33m [Client WARN] Received stream end frame[0m
+16:41:31.067[33m [Client WARN] Got 503 stream error, assuming automatic reconnect will handle it[0m
+16:41:31.224[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: EOF[0m
+16:41:31.226[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+16:41:35.441[36m [Client INFO] Successfully authenticated[0m
+16:41:37.401[36m [Client INFO] Connected to WhatsApp[0m
+16:44:27.823[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+16:44:27.839[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+[2026-07-09 16:44:27] ← 153837272854594: [image: image_20260709_164427.jpg] 

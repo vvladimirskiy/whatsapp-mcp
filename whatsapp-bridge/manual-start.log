@@ -494,3 +494,25 @@ A preliminary investigation determined that the soldier and the Palestinian driv
 [2026-07-09 17:27:00] ← 120363163084894840: [video: video_20260709_172701.mp4] 
 17:29:00.678[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 [2026-07-09 17:29:00] ← 11351682506897: [video: video_20260709_172900.mp4] 
+17:29:32.516[33m [Client WARN] Keepalive timed out[0m
+17:29:32.517[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-09T17:29:00-05:00)[0m
+17:29:46.384[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: read tcp 172.19.1.122:61614->31.13.66.56:443: read: operation timed out[0m
+17:29:46.385[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+17:29:51.843[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:29:53.850[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:29:57.857[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:30:03.865[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:30:11.870[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:30:21.875[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:30:33.880[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:30:47.887[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:31:03.897[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+17:31:22.718[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": http: server gave HTTP response to HTTPS client[0m
+17:31:42.740[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": http: server gave HTTP response to HTTPS client[0m
+17:32:04.866[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": http: server gave HTTP response to HTTPS client[0m
+17:32:35.880[36m [Client INFO] Successfully authenticated[0m
+17:32:37.928[36m [Client INFO] Connected to WhatsApp[0m
+17:32:38.088[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+[2026-07-09 17:30:17] ← 35790482587671: [video: video_20260709_173238.mp4] 
+17:32:38.107[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+17:32:38.116[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m

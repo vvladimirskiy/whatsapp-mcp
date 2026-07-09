@@ -544,3 +544,18 @@ A preliminary investigation determined that the soldier and the Palestinian driv
 18:23:55.867[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 18:23:55.882[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 [2026-07-09 18:23:56] ← 35790482587671: [video: video_20260709_182355.mp4] 
+18:26:04.393[33m [Client WARN] Keepalive timed out[0m
+18:26:04.394[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-09T18:25:30-05:00)[0m
+18:26:28.145[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: EOF[0m
+18:26:28.146[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+18:26:58.150[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: i/o timeout[0m
+18:27:01.302[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:27:05.309[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:27:11.315[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:27:19.321[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:27:29.328[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:27:41.335[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:27:55.343[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:28:11.351[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+18:28:31.370[36m [Client INFO] Successfully authenticated[0m
+18:28:32.402[36m [Client INFO] Connected to WhatsApp[0m

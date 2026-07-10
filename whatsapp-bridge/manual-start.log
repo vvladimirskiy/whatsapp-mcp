@@ -1234,3 +1234,4 @@ https://chat.whatsapp.com/K5rn2Uiug7PET2C4aUstQI
 12:03:31.333[36m [Client INFO] Successfully authenticated[0m
 12:03:31.912[36m [Client INFO] Connected to WhatsApp[0m
 12:06:56.866[33m [Client WARN] Error decrypting message A56F7D2220E776B7EC5FD3749616295E from 206819955867834:7@lid in 12019518001-1609772763@g.us: failed to decrypt group message: no sender key for 206819955867834_1:7 in 12019518001-1609772763@g.us[0m
+12:21:34.413[33m [Client WARN] Error decrypting message A599E65AA837C4023D9168E0A43AA51B from 191457478623348@lid in 19142660337-1529705895@g.us: failed to decrypt group message: no sender key for 191457478623348_1:0 in 19142660337-1529705895@g.us[0m

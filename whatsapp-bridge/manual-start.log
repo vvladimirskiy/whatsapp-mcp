@@ -573,3 +573,12 @@ A preliminary investigation determined that the soldier and the Palestinian driv
 19:10:26.936[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 19:10:26.951[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 [2026-07-09 19:10:25] ← 204260121821439: [video: video_20260709_191026.mp4] 
+19:22:07.367[33m [Client WARN] Keepalive timed out[0m
+19:22:07.369[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-09T19:21:32-05:00)[0m
+19:22:40.134[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: read tcp [2600:1008:b35b:49c0:2c0c:c094:5f24:fbb0]:65419->[2a03:2880:f357:120:face:b00c:0:167]:443: read: no route to host[0m
+19:22:40.134[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+19:22:40.138[31m [Client ERROR] Error reconnecting after autoreconnect sleep: failed to dial whatsapp web websocket: failed to WebSocket dial: failed to send handshake request: Get "https://web.whatsapp.com/ws/chat": dial tcp: lookup web.whatsapp.com: no such host[0m
+19:22:42.596[36m [Client INFO] Successfully authenticated[0m
+19:22:43.120[36m [Client INFO] Connected to WhatsApp[0m
+19:39:23.044[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 19:39:21] ← 11351682506897: [video: video_20260709_193923.mp4] 

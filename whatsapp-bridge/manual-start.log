@@ -1256,3 +1256,4 @@ https://chat.whatsapp.com/K5rn2Uiug7PET2C4aUstQI
 14:20:46.893[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 14:20:46.915[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 [2026-07-10 14:20:46] ← 35790482587671: [image: image_20260710_142046.jpg] 
+14:27:47.438[33m [Client WARN] Error decrypting message 3A67987070EFC1A2E714 from 155671223922789@lid in 19142660337-1529705895@g.us: failed to decrypt group message: no sender key for 155671223922789_1:0 in 19142660337-1529705895@g.us[0m

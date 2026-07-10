@@ -568,3 +568,8 @@ A preliminary investigation determined that the soldier and the Palestinian driv
 19:02:06.059[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 19:02:06.074[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 [2026-07-09 19:02:05] ← 253729521569961: [video: video_20260709_190206.mp4] 
+19:04:15.421[33m [Client WARN] Set status notification has unexpected content (<nil>)[0m
+19:04:17.149[33m [Client WARN] Set status notification has unexpected content (<nil>)[0m
+19:10:26.936[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+19:10:26.951[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
+[2026-07-09 19:10:25] ← 204260121821439: [video: video_20260709_191026.mp4] 

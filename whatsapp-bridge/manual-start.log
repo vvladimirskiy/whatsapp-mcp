@@ -1238,3 +1238,7 @@ https://chat.whatsapp.com/K5rn2Uiug7PET2C4aUstQI
 12:50:09.367[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 12:50:09.392[36m [Client INFO] Using existing chat name for status@broadcast: 17738412839[0m
 [2026-07-10 12:50:08] ← 119783014031518: [video: video_20260710_125009.mp4] 
+13:48:20.380[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: EOF[0m
+13:48:20.396[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+13:48:20.671[36m [Client INFO] Successfully authenticated[0m
+13:48:20.998[36m [Client INFO] Connected to WhatsApp[0m

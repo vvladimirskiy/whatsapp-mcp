@@ -1375,3 +1375,12 @@ ONE. GREAT. SHABBOS.
 19:45:01.198[33m [Client WARN] Set status notification has unexpected content (<nil>)[0m
 21:38:35.917[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 21:38:35.978[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+23:58:53.309[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: EOF[0m
+23:58:53.311[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+23:58:55.136[36m [Client INFO] Successfully authenticated[0m
+23:58:55.401[36m [Client INFO] Connected to WhatsApp[0m
+05:07:09.383[33m [Client WARN] Keepalive timed out[0m
+05:07:09.384[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T05:06:31-05:00)[0m
+05:07:38.441[36m [Client INFO] WhatsApp keepalive restored[0m
+07:01:25.262[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+07:01:25.314[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m

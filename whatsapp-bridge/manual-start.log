@@ -1365,3 +1365,10 @@ ONE. GREAT. SHABBOS.
 18:09:41.987[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 18:09:56.015[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 18:09:56.026[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+18:15:39.142[31m [Client/Socket ERROR] Error reading from websocket: failed to get reader: failed to read frame header: EOF[0m
+18:15:39.158[33m [Client WARN] Disconnected from WhatsApp (auto-reconnect will handle this)[0m
+18:15:39.512[36m [Client INFO] Successfully authenticated[0m
+18:15:39.827[36m [Client INFO] Connected to WhatsApp[0m
+19:03:16.542[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+19:03:16.568[36m [Client INFO] Using existing chat name for 12019518001-1609772763@g.us: Banyan Tree- Minyan Only[0m
+[2026-07-10 19:03:15] ← 153837272854594: [image: image_20260710_190316.jpg] 

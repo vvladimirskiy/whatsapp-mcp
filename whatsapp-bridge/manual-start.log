@@ -1385,3 +1385,44 @@ ONE. GREAT. SHABBOS.
 07:01:25.262[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 07:01:25.314[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
 07:02:39.736[36m [Client INFO] Using existing chat name for 19142660337-1529705895@g.us: 2 Jewish Breaking News[0m
+07:06:33.523[33m [Client WARN] Keepalive timed out[0m
+07:06:33.524[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:05:57-05:00)[0m
+07:07:00.203[36m [Client INFO] WhatsApp keepalive restored[0m
+07:07:35.809[33m [Client WARN] Keepalive timed out[0m
+07:07:35.810[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:07:00-05:00)[0m
+07:08:05.245[36m [Client INFO] WhatsApp keepalive restored[0m
+07:09:03.604[33m [Client WARN] Keepalive timed out[0m
+07:09:03.604[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:08:27-05:00)[0m
+07:09:33.775[33m [Client WARN] Keepalive timed out[0m
+07:09:33.776[33m [Client WARN] WhatsApp keepalive timeout (errors: 2, last success: 2026-07-11T07:08:27-05:00)[0m
+07:10:09.657[33m [Client WARN] Keepalive timed out[0m
+07:10:09.657[33m [Client WARN] WhatsApp keepalive timeout (errors: 3, last success: 2026-07-11T07:08:27-05:00)[0m
+07:10:32.435[36m [Client INFO] WhatsApp keepalive restored[0m
+07:11:09.432[33m [Client WARN] Keepalive timed out[0m
+07:11:09.433[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:10:32-05:00)[0m
+07:11:42.649[33m [Client WARN] Keepalive timed out[0m
+07:11:42.649[33m [Client WARN] WhatsApp keepalive timeout (errors: 2, last success: 2026-07-11T07:10:32-05:00)[0m
+07:12:17.030[33m [Client WARN] Keepalive timed out[0m
+07:12:17.030[33m [Client WARN] WhatsApp keepalive timeout (errors: 3, last success: 2026-07-11T07:10:32-05:00)[0m
+07:12:47.475[36m [Client INFO] WhatsApp keepalive restored[0m
+07:13:22.892[33m [Client WARN] Keepalive timed out[0m
+07:13:22.893[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:12:47-05:00)[0m
+07:13:44.581[36m [Client INFO] WhatsApp keepalive restored[0m
+07:14:46.629[33m [Client WARN] Keepalive timed out[0m
+07:14:46.629[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:14:11-05:00)[0m
+07:15:15.415[36m [Client INFO] WhatsApp keepalive restored[0m
+07:23:38.497[33m [Client WARN] Keepalive timed out[0m
+07:23:38.498[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:23:02-05:00)[0m
+07:24:18.117[33m [Client WARN] Keepalive timed out[0m
+07:24:18.117[33m [Client WARN] WhatsApp keepalive timeout (errors: 2, last success: 2026-07-11T07:23:02-05:00)[0m
+07:24:47.612[36m [Client INFO] WhatsApp keepalive restored[0m
+07:37:24.198[33m [Client WARN] Keepalive timed out[0m
+07:37:24.199[33m [Client WARN] WhatsApp keepalive timeout (errors: 1, last success: 2026-07-11T07:36:50-05:00)[0m
+07:37:56.897[33m [Client WARN] Keepalive timed out[0m
+07:37:56.897[33m [Client WARN] WhatsApp keepalive timeout (errors: 2, last success: 2026-07-11T07:36:50-05:00)[0m
+07:38:30.665[33m [Client WARN] Keepalive timed out[0m
+07:38:30.665[33m [Client WARN] WhatsApp keepalive timeout (errors: 3, last success: 2026-07-11T07:36:50-05:00)[0m
+07:39:03.065[33m [Client WARN] Keepalive timed out[0m
+07:39:03.065[33m [Client WARN] WhatsApp keepalive timeout (errors: 4, last success: 2026-07-11T07:36:50-05:00)[0m
+07:39:03.065[31m [Client ERROR] Too many keepalive failures, forcing disconnect to trigger auto-reconnect[0m
+07:39:08.224[33m [Client/Socket WARN] Error sending close to websocket: failed to close WebSocket: context deadline exceeded[0m
